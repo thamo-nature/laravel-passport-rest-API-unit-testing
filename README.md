@@ -7,6 +7,11 @@ Installation :
     php artisan migrate
     php artisan passport:install
 
+    //User Model
+
+    use Laravel\Passport\HasApiTokens;
+    HasApiTokens
+    
     config/auth.php
 
             'guards' => [
