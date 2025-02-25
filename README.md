@@ -137,3 +137,17 @@ API end points :
                           "message": "Blog deleted successfully"
                         }
             
+<br>
+
+<pre>
+// Check for required headers
+    if ($request->header('Accept') !== 'application/json' || $request->header('Content-Type') !== 'application/json') {
+        return response()->json([
+            'error' => 'Malformed Headers',
+            'message' => 'Please provide proper headers: Accept: application/json and Content-Type: application/json',
+            'url' => $request->fullUrl(),
+            'method' => $request->method(),
+            'debug_info'=> $request->headers->all()
+        ], 400); // 400 Bad Request
+    }
+</pre>
